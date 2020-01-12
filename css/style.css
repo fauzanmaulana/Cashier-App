@@ -1,0 +1,60 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #eaeaea;
+    overflow: hidden;
+}
+
+.bg-nav{
+    background: blue;
+}
+
+.contain{
+    padding: 0 10px;
+}
+
+.menu , .cart{
+    height: 85vh;
+}
+
+.menu{
+    overflow-y: scroll;
+}
+
+.sub-nav{
+    padding: 10px;
+    border: 0;
+}
+
+.type-buy{
+    width: 100%;
+}
+
+.item-list{
+    position: relative;
+    height: 57vh;
+    padding-right: 2%;
+    overflow-y: scroll;
+}
+
+.quantity{
+    width: 15%;
+}
+
+.card{
+    cursor: pointer;
+}
+
+#buy-type{
+    color: black;
+    border-radius: 0;
+    height: 50px;
+    text-align: center;
+    box-sizing: border-box;
+    padding-left: 38%;
+}
+
+.remove-all{
+    width: 100%;
+    border-radius: 0;
+}

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Mart</title>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-light bg-nav">
+      <a class="navbar-brand text-white" href="#">Mart</a>
+      <div class="col-md-2" id="search-el" style="display: none;">
+        <input type="text" class="form-control" id="search-input" placeholder="search something..">
+      </div>
+    </nav>
+    
+    <div class="contain">
+      <div class="row">
+        <div class="col-md-3 p-3 cart">
+          <div class="type-buying">
+            <select name="buy-type" id="buy-type" class="form-control mb-2 bg-primary text-white">
+              <option class="bg-white" value="Take Away">Take Away</option>
+              <option class="bg-white" value="Drive True">Drive True</option>
+            </select>
+          </div>
+          <div class="sub-nav bg-primary text-center text-white mb-2"><p class="my-0"><span class="mr-1"><img src="https://img.icons8.com/pastel-glyph/30/000000/user-male--v1.png"></span>Mang.Jay</p></div>
+          <div class="item-list mt-2">
+            <div id="loop-invoice">
+              <!-- loop item -->
+            </div>
+          </div>
+          <div class="amount">
+            <span>Tax : Rp.<span id="tax">0</span></span>
+            <br>
+            <span>Total : Rp.<span id="total">0</span></span>
+          </div>
+        </div>
+        <div class="col-md-9 p-3 menu">
+          <div class="sub-nav bg-white">
+            <div class="row">
+              <div class="col-md-4">
+                <h5 class="my-0">Item List</h5>
+              </div>
+              <div class="col-md-4">
+                <h5 class="my-0 text-center" id="name-cat">Food</h5>
+              </div>
+              <div class="col-md-4">
+                <div class="nav-btn float-right">
+
+                  <div class="dropdown float-left mr-1">
+                    <button class="btn btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <img src="https://img.icons8.com/material-rounded/24/000000/menu-2.png">
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="#" id="food">Food</a>
+                      <a class="dropdown-item" href="#" id="drink">drink</a>
+                    </div>
+                  </div>
+
+                  <button class="btn btn-sm" id="search-btn"><img src="https://img.icons8.com/android/24/000000/search.png"></i></button>
+
+                  <button class="btn btn-sm" id="sort"><img src="https://img.icons8.com/ios-glyphs/24/000000/generic-sorting-2.png"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3" id="loop-card">
+
+            <!-- loop el -->
+
+          </div>
+        </div>
+      </div>
+
+      <div class="buy">
+        <div class="row">
+          <div class="col-md-3">
+            <button onclick="remove_invoice()" class="btn btn-outline-danger remove-all">Remove All</button>
+          </div>
+          <div class="col-md-9">
+            <div class="input-group mb-3">
+              <input type="text" id="money" class="form-control" placeholder="Insert Your Money" aria-label="Recipient's username" aria-describedby="button-addon2">
+              <div class="input-group-append">
+                <button type="button" id="buy" class="btn btn-primary" data-toggle="modal">
+                  Payment <span><img src="https://img.icons8.com/material-rounded/24/ffffff/heck-for-payment.png"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal-invoice" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Invoice</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h6>Type Buy</h6>
+              <p id="total-type"></p>
+            <h6>Item</h6>
+            <div id="total-item">
+              <!-- loop total -->
+            </div>
+            <div id="total-payment mt-4">
+              <p class="text-right">Tax : Rp.<span id="tax-in"></span></p>
+              <p class="text-right">Total : Rp.<span id="total-in"></span></p>
+              <p class="text-right">Money : Rp.<span id="money-in"></span></p>
+              <p class="text-right">Change : Rp.<span id="change-in"></span></p>
+            </div>
+            <p class="text-center">Thank for visit :)</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" id="end-payment">End Payment</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
